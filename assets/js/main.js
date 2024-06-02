@@ -229,9 +229,9 @@ $(document).ready(function() {
           
           // Check if the section is within the viewport and the top of the section is 20px above the bottom of the viewport
           if (scrollTop + windowHeight - 20 > sectionOffset && scrollTop < sectionOffset + sectionHeight) {
-            section.css({background: "transparent", transition: "2s"});
+            section.css({display: "none", transition: "2s"});
           } else {
-            section.css({background: "#000000", transition: "2s"});
+            section.css({display: "block", transition: "2s"});
           }
       });
     }
@@ -268,7 +268,7 @@ $(document).ready(function() {
   
     // Initial check in case the sections are already in view on page load
     checkVisibility();
-  }, 1500);
+  }, 1000);
 
   // Animation right to left
   setTimeout(() => {
@@ -294,7 +294,7 @@ $(document).ready(function() {
   
     // Initial check in case the sections are already in view on page load
     checkVisibility();
-  }, 1500);
+  }, 1000);
   
 
    // Animation bottom to top
@@ -321,7 +321,7 @@ $(document).ready(function() {
   
     // Initial check in case the sections are already in view on page load
     checkVisibility();
-  }, 1500);
+  }, 1000);
 
   // Animation top to bottom
   setTimeout(() => {
@@ -347,7 +347,7 @@ $(document).ready(function() {
   
     // Initial check in case the sections are already in view on page load
     checkVisibility();
-  }, 1500);
+  }, 1000);
  
 
   // Golden Card Modal
