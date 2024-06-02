@@ -648,7 +648,10 @@ a:hover {
 .nav-arrow-a .owl-arrow .owl-nav .owl-next {
   margin-left: 15px;
 }
-
+.property-single{
+  margin-top: -50px;
+  padding-top: 50px;
+}
 .nav-arrow-b .owl-arrow .owl-nav {
   position: absolute;
   top: 0;
@@ -1179,12 +1182,40 @@ a:hover {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+.left_to_right{
+  transform: translateX(-100%);
+  opacity: .2;
+}
+.right_to_left{
+  transform: translateX(100%);
+  opacity: .2;
+}
+.bottom_to_top{
+  transform: translateY(100%);
+  opacity: .2;
+}
+.top_to_bottom{
+  transform: translateY(-100%);
+  opacity: .2;
+}
+
 .intro {
   height: 100vh;
   position: relative;
   color: #ffffff;
 }
-
+.black_layer{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  z-index: 999;
+}
+section{
+  position: relative;
+}
 .intro .swiper-pagination {
   bottom: 50px;
 }
@@ -1944,6 +1975,21 @@ a:hover {
   transition: all 0.2s ease-in-out;
   padding: 15px 40px 15px 35px;
 }
+.card-overlay-hover:hover .link-two{
+  color: #ffffff;
+}
+.card-overlay-hover:hover .content-d{
+  color: #ffffff;
+}
+.card-overlay-hover:hover .info-agents{
+  color: #ffffff;
+}
+.card-overlay-hover:hover .link-one{
+  color: #ffffff;
+}
+.card-overlay-hover:hover .link-one:hover{
+  color: #B08961;
+}
 
 @media (min-width: 768px) {
   .card-box-d .card-overlay-hover {
@@ -2370,15 +2416,21 @@ a:hover {
 --------------------------------------------------------------*/
 .section-footer {
   padding-top: 60px;
-  background: #542C7B;
+  /* background: #542C7B; */
+  /* background: #B08961; */
+  /* background: linear-gradient(to bottom, #542C7B, #B08961); */
   margin-top: 50px;
+}
+.footer_div{
+  /* background: linear-gradient(#542C7B, #B08961); */
+  background: linear-gradient(#220143, #4a1f76, #542C7B);
 }
 .item-list-a a{
   color: #d8d7d7;
   transition: .3s;
 }
 .item-list-a a:hover{
-  color: #000000;
+  color: #B08961;
 }
 .list-inline-item a{
   color: #a6a5a5;
@@ -2397,7 +2449,7 @@ a:hover {
 .section-footer .item-list-a i {
   font-size: 18px;
   padding-right: 4px;
-  color: #000000;
+  color: #B08961;
 }
 
 .section-footer .widget-a .w-title-a {
@@ -2409,7 +2461,7 @@ a:hover {
   opacity: 1;
 }
 footer {
-  background: #542C7B;
+  /* background: #542C7B; */
   text-align: center;
   padding: 30px 0;
 }
@@ -2423,6 +2475,9 @@ footer .credits{
   font-size: 14px;
   color: #d8d7d7;
   transition: .3s;
+}
+.credits a{
+  color: #B08961;
 }
 .credits a:hover{
   color: #ffffff;
@@ -2736,6 +2791,91 @@ footer .credits{
   margin-bottom: 20px;
 }
 
+/* INvestment page */
+.investment_row{
+  flex-direction: row-reverse;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  align-items: center;
+}
+.investment_ilign{
+  align-items: center;
+}
+.investment_list{
+  list-style: none;
+  padding-left: 0;
+} 
+.investment_list li{
+  margin-bottom: 10px;
+  color: #333333;
+  letter-spacing: 1.1px;
+}
+.investment_list2{
+  padding-left: 20px;
+}
+.investment_list2 li{
+  margin-bottom: 10px;
+  letter-spacing: 1.1px;
+  color: #333333;
+}
+
+/* Bg Img */
+.card_section{
+  background: url('../img/background/Line.png');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.funfact_section{
+  background: url('../img/background/Line.png');
+  background-position: center 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.contact_section{
+  background: url('../img/background/Line.png');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.ceo_massage_section{
+  background: url('../img/background/Line.png');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.invest_section_bg:nth-child(odd){
+  background: url('../img/background/Line.png');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+/* Accourdion */
+.accordion-button{
+  border: none;
+}
+.accordion-header{
+  background: transparent;
+}
+.accordion-button:focus{
+  background: transparent;
+  outline-color: #542C7B;
+  box-shadow: none;
+}
+.mobile_accordion_inner{
+  margin-top: -50px;
+}
+.accordion-button:not(.collapsed){
+  background: transparent;
+  outline: none;
+  border: none;
+}
+.accordion-button.collapsed{
+  background: transparent;
+  outline: none;
+}
 /* Responsive design stat here */
 @media (max-width: 1200px) {
   .tab_inner iframe{
