@@ -214,35 +214,161 @@
 })()
 
 
-// Animation
+
 $(document).ready(function() {
-  function checkVisibility() {
-    $('.fade-in-section').each(function() {
-        var section = $(this);
-        var windowHeight = $(window).height();
-        var scrollTop = $(window).scrollTop();
-        var sectionOffset = section.offset().top;
-        var sectionHeight = section.height();
-        
-        // Check if the section is within the viewport and the top of the section is 20px above the bottom of the viewport
-        if (scrollTop + windowHeight - 20 > sectionOffset && scrollTop < sectionOffset + sectionHeight) {
-          section.css({opacity: "1", transition: ".5s", marginTop: "0"});
-        } else {
-          section.css({opacity: ".1", transition: ".5s", marginTop: "100px"});
-        }
-    });
-}
 
-// Check visibility on scroll
-$(window).on('scroll', checkVisibility);
+  // Animation black layer
+  setTimeout(() => {
+    function checkVisibility() {
+      $('.fade-in-section').each(function() {
+          var section = $(this);
+          var windowHeight = $(window).height();
+          var scrollTop = $(window).scrollTop();
+          var sectionOffset = section.offset().top;
+          var sectionHeight = section.height();
+          
+          // Check if the section is within the viewport and the top of the section is 20px above the bottom of the viewport
+          if (scrollTop + windowHeight - 20 > sectionOffset && scrollTop < sectionOffset + sectionHeight) {
+            section.css({background: "transparent", transition: "2s"});
+          } else {
+            section.css({background: "#000000", transition: "2s"});
+          }
+      });
+    }
+  
+    // Check visibility on scroll
+    $(window).on('scroll', checkVisibility);
+  
+    // Initial check in case the sections are already in view on page load
+    checkVisibility();
+  }, 1500);
 
-// Initial check in case the sections are already in view on page load
-checkVisibility();
 
-// Card Slider
-$(".getCode_button").click(function(){
-  let parentDiv = $(this).closest(".card_slider_open")
-})
+  // Animation left to right
+  setTimeout(() => {
+    function checkVisibility() {
+      $('.left_to_right').each(function() {
+          var section = $(this);
+          var windowHeight = $(window).height();
+          var scrollTop = $(window).scrollTop();
+          var sectionOffset = section.offset().top;
+          var sectionHeight = section.height();
+          
+          // Check if the section is within the viewport and the top of the section is 20px above the bottom of the viewport
+          if (scrollTop + windowHeight - 20 > sectionOffset && scrollTop < sectionOffset + sectionHeight) {
+            section.css({transform: "translateX(0)", opacity: "1", transition: "1s"});
+          } else {
+            section.css({transform: "translateX(-100%)", opacity: ".2", transition: "1s"});
+          }
+      });
+    }
+  
+    // Check visibility on scroll
+    $(window).on('scroll', checkVisibility);
+  
+    // Initial check in case the sections are already in view on page load
+    checkVisibility();
+  }, 1500);
+
+  // Animation right to left
+  setTimeout(() => {
+    function checkVisibility() {
+      $('.right_to_left').each(function() {
+          var section = $(this);
+          var windowHeight = $(window).height();
+          var scrollTop = $(window).scrollTop();
+          var sectionOffset = section.offset().top;
+          var sectionHeight = section.height();
+          
+          // Check if the section is within the viewport and the top of the section is 20px above the bottom of the viewport
+          if (scrollTop + windowHeight - 20 > sectionOffset && scrollTop < sectionOffset + sectionHeight) {
+            section.css({transform: "translateX(0)", opacity: "1", transition: "1s"});
+          } else {
+            section.css({transform: "translateX(100%)", opcity: ".2", transition: "1s"});
+          }
+      });
+    }
+  
+    // Check visibility on scroll
+    $(window).on('scroll', checkVisibility);
+  
+    // Initial check in case the sections are already in view on page load
+    checkVisibility();
+  }, 1500);
+  
+
+   // Animation bottom to top
+   setTimeout(() => {
+    function checkVisibility() {
+      $('.bottom_to_top').each(function() {
+          var section = $(this);
+          var windowHeight = $(window).height();
+          var scrollTop = $(window).scrollTop();
+          var sectionOffset = section.offset().top;
+          var sectionHeight = section.height();
+          
+          // Check if the section is within the viewport and the top of the section is 20px above the bottom of the viewport
+          if (scrollTop + windowHeight - 20 > sectionOffset && scrollTop < sectionOffset + sectionHeight) {
+            section.css({transform: "translateY(0)", opacity: "1", transition: "1s"});
+          } else {
+            section.css({transform: "translateY(100%)", opcity: ".2", transition: "1s"});
+          }
+      });
+    }
+  
+    // Check visibility on scroll
+    $(window).on('scroll', checkVisibility);
+  
+    // Initial check in case the sections are already in view on page load
+    checkVisibility();
+  }, 1500);
+
+  // Animation top to bottom
+  setTimeout(() => {
+    function checkVisibility() {
+      $('.top_to_bottom').each(function() {
+          var section = $(this);
+          var windowHeight = $(window).height();
+          var scrollTop = $(window).scrollTop();
+          var sectionOffset = section.offset().top;
+          var sectionHeight = section.height();
+          
+          // Check if the section is within the viewport and the top of the section is 20px above the bottom of the viewport
+          if (scrollTop + windowHeight - 20 > sectionOffset && scrollTop < sectionOffset + sectionHeight) {
+            section.css({transform: "translateY(0)", opacity: "1", transition: "1s"});
+          } else {
+            section.css({transform: "translateY(-100%)", opcity: ".2", transition: "1s"});
+          }
+      });
+    }
+  
+    // Check visibility on scroll
+    $(window).on('scroll', checkVisibility);
+  
+    // Initial check in case the sections are already in view on page load
+    checkVisibility();
+  }, 1500);
+ 
+
+  // Golden Card Modal
+  let goldenModal = $(".golden_card_modal");
+  $("#golden_btn").click(function(e){
+    e.preventDefault();
+    goldenModal.css({transform: "scale(1)", transition: ".5s"});
+  });
+  $(".golden_modal_close").click(function(){
+    goldenModal.css({transform: "scale(0)", transition: ".5s"});
+  });
+
+  // black Card Modal
+  let blackModal = $(".black_card_modal");
+  $("#black_btn").click(function(e){
+    e.preventDefault();
+    blackModal.css({transform: "scale(1)", transition: ".5s"});
+  });
+  $(".black_modal_close").click(function(){
+    blackModal.css({transform: "scale(0)", transition: ".5s"});
+  });
 });
 
 
