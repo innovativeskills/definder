@@ -105,6 +105,7 @@ a:hover {
 .card_section{
   padding-top: 120px;
   background: #ffffff;
+  position: unset;
 }
 .card_main_slide{
   position: relative;
@@ -137,6 +138,7 @@ a:hover {
   padding: 10px 20px;
   color: #542C7B;
   transition: all .3s;
+  cursor: pointer;
 } 
 
 .card_title{
