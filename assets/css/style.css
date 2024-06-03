@@ -795,12 +795,13 @@ a:hover {
 
 .btn.btn-b {
   background-color: #542C7B;
-  color: #000000;
+  color: #ffffff;
+  border: 1px solid #542C7B;
 }
 
 .btn.btn-b:hover {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #542C7B;
 }
 
 .btn.btn-b-n {
@@ -1206,15 +1207,20 @@ a:hover {
   position: relative;
   color: #ffffff;
 }
+.fade-in-section{
+  position: relative;
+}
 .black_layer{
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: #000000;
-  z-index: 999999;
-  transition: all 1s;
+  background: rgba(0, 0, 0, .7);
+  z-index: 99;
+  transition: opacity 1.5s;
+  pointer-events: none;
+  opacity: 1;
 }
 
 .intro .swiper-pagination {
