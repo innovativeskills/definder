@@ -1218,7 +1218,7 @@ a:hover {
   height: 100%;
   background: rgba(0, 0, 0, .7);
   z-index: 99;
-  transition: opacity 1.5s;
+  transition: opacity 1s;
   pointer-events: none;
   opacity: 1;
 }
@@ -2882,6 +2882,15 @@ footer .credits{
 .accordion-button.collapsed{
   background: transparent;
   outline: none;
+}
+
+.details_form input:focus{
+  box-shadow: none;
+  border-color: #542C7B;
+}
+.details_form textarea:focus{
+  box-shadow: none;
+  border-color: #542C7B;
 }
 /* Responsive design stat here */
 @media (max-width: 1200px) {

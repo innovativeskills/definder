@@ -218,32 +218,32 @@
 $(document).ready(function() {
 
   // Animation black layer
-  setTimeout(() => {
-    let options = {
-        root: null, // Use the viewport as the root
-        rootMargin: '0px',
-        threshold: 0.1 // Trigger the callback when 10% of the section is visible
-    };
+ {
+  let options = {
+    root: null, // Use the viewport as the root
+    rootMargin: '0px',
+    threshold: 0.1 // Trigger the callback when 10% of the section is visible
+};
 
-    let observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Element is in view, hide the overlay after 1 second
-                setTimeout(() => {
-                    $(entry.target).find('.black_layer').css('opacity', 0);
-                }, 300); // 1 second delay before hiding the overlay
-            } else {
-                // Element is out of view, ensure the overlay is visible again
-                $(entry.target).find('.black_layer').css('opacity', 1);
-            }
-        });
-    }, options);
-
-    // Observe each .fade-in-section
-    $('.fade-in-section').each(function() {
-        observer.observe(this);
+let observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Element is in view, hide the overlay after 1 second
+            setTimeout(() => {
+                $(entry.target).find('.black_layer').css('opacity', 0);
+            }, 250); // 1 second delay before hiding the overlay
+        } else {
+            // Element is out of view, ensure the overlay is visible again
+            $(entry.target).find('.black_layer').css('opacity', 1);
+        }
     });
-}, 100);
+}, options);
+
+// Observe each .fade-in-section
+$('.fade-in-section').each(function() {
+    observer.observe(this);
+});
+ }
 
   // Animation tab pills
   $('.tabPills_btn').on('click', function(){
