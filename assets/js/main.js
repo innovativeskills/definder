@@ -218,30 +218,50 @@
 $(document).ready(function() {
 
   // Animation black layer
-  setTimeout(() => {
-    function checkVisibility() {
-      $('.fade-in-section').each(function() {
-          var section = $(this);
-          var windowHeight = $(window).height();
-          var scrollTop = $(window).scrollTop();
-          var sectionOffset = section.offset().top;
-          var sectionHeight = section.height();
-          
-          // Check if the section is within the viewport and the top of the section is 20px above the bottom of the viewport
-          if (scrollTop + windowHeight - 20 > sectionOffset && scrollTop < sectionOffset + sectionHeight) {
-            section.css({display: "none", transition: "2s"});
-          } else {
-            section.css({display: "block", transition: "2s"});
-          }
-      });
-    }
-  
-    // Check visibility on scroll
-    $(window).on('scroll', checkVisibility);
-  
-    // Initial check in case the sections are already in view on page load
-    checkVisibility();
-  }, 1500);
+ {
+  let options = {
+    root: null, // Use the viewport as the root
+    rootMargin: '0px',
+    threshold: 0.1 // Trigger the callback when 10% of the section is visible
+};
+
+let observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Element is in view, hide the overlay after 1 second
+            setTimeout(() => {
+                $(entry.target).find('.black_layer').css('opacity', 0);
+            }, 250); // 1 second delay before hiding the overlay
+        } else {
+            // Element is out of view, ensure the overlay is visible again
+            $(entry.target).find('.black_layer').css('opacity', 1);
+        }
+    });
+}, options);
+
+// Observe each .fade-in-section
+$('.fade-in-section').each(function() {
+    observer.observe(this);
+});
+ }
+
+  // Animation tab pills
+  $('.tabPills_btn').on('click', function(){
+    $('.right_to_left').each(function() {
+      var section = $(this);
+      var windowHeight = $(window).height();
+      var scrollTop = $(window).scrollTop();
+      var sectionOffset = section.offset().top;
+      var sectionHeight = section.height();
+      
+      // Check if the section is within the viewport and the top of the section is 20px above the bottom of the viewport
+      if (scrollTop + windowHeight - 20 > sectionOffset && scrollTop < sectionOffset + sectionHeight) {
+        section.css({transform: "translateX(0)", opacity: "1", transition: "1s"});
+      } else {
+        section.css({transform: "translateX(100%)", opcity: ".2", transition: "1s"});
+      }
+  });
+  });
 
 
   // Animation left to right
